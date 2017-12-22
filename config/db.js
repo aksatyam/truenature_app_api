@@ -4,7 +4,7 @@ require('colors');
 module.exports = (app)=>{
     console.log('db set');
     mongoose.Promise = global.Promise;
-    mongoose.connect('mongodb://root:root@ds127506.mlab.com:27506/demodb', {
+    mongoose.connect('mongodb://root:root@ds163016.mlab.com:63016/demodb', {
         useMongoClient: true
     });
     mongoose.connection.on('connected', ()=> {
