@@ -8,7 +8,6 @@ module.exports={
         res.status(200).send({message: 'done'});
     },
     saveLot: async(req, res)=>{
-        console.log(req);
         try{
             if(!req.body)
                 throw validation.errorFormat('empty_field', 'Data not present', 400);
