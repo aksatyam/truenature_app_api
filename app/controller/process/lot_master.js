@@ -8,6 +8,7 @@ module.exports={
         res.status(200).send({message: 'done'});
     },
     saveLot: async(req, res)=>{
+        console.log(req);
         try{
             if(!req.body)
                 throw validation.errorFormat('empty_field', 'Data not present', 400);
@@ -18,30 +19,30 @@ module.exports={
             lotsData.indu_id = req.body.indu_id;
             lotsData.lot_name = req.body.lot_name;
             lotsData.material0 = req.body.material0;
-            lotsData.material1 = req.body.material1 || '';
-            lotsData.material2 = req.body.material2 || '';
-            lotsData.material3 = req.body.material3 || '';
-            lotsData.material4 = req.body.material4 || '';
-            lotsData.material5 = req.body.material5 || '';
-            lotsData.material6 = req.body.material6 || '';
-            lotsData.material7 = req.body.material7 || '';
-            lotsData.material8 = req.body.material8 || '';
-            lotsData.material9 = req.body.material9 || '';
-            lotsData.material10 = req.body.material10 || '';
-            lotsData.material11 = req.body.material11 || '';
-            lotsData.material12 = req.body.material12 || '';
-            lotsData.material13 = req.body.material13 || '';
-            lotsData.material14 = req.body.material14 || '';
-            lotsData.material15 = req.body.material15 || '';
-            lotsData.material16 = req.body.material16 || '';
-            lotsData.material17 = req.body.material17 || '';
-            lotsData.material18 = req.body.material18 || '';
-            lotsData.material19 = req.body.material19 || '';
-            lotsData.material20 = req.body.material20 || '';
-            lotsData.material21 = req.body.material21 || '';
-            lotsData.material22 = req.body.material22 || '';
-            lotsData.material23 = req.body.material23 || '';
-            lotsData.material24 = req.body.material24 || '';
+            lotsData.material1 = req.body.material1;
+            lotsData.material2 = req.body.material2;
+            lotsData.material3 = req.body.material3;
+            lotsData.material4 = req.body.material4;
+            lotsData.material5 = req.body.material5;
+            lotsData.material6 = req.body.material6;
+            lotsData.material7 = req.body.material7;
+            lotsData.material8 = req.body.material8;
+            lotsData.material9 = req.body.material9;
+            lotsData.material10 = req.body.material10;
+            lotsData.material11 = req.body.material11;
+            lotsData.material12 = req.body.material12;
+            lotsData.material13 = req.body.material13;
+            lotsData.material14 = req.body.material14;
+            lotsData.material15 = req.body.material15;
+            lotsData.material16 = req.body.material16;
+            lotsData.material17 = req.body.material17;
+            lotsData.material18 = req.body.material18;
+            lotsData.material19 = req.body.material19;
+            lotsData.material20 = req.body.material20;
+            lotsData.material21 = req.body.material21;
+            lotsData.material22 = req.body.material22;
+            lotsData.material23 = req.body.material23;
+            lotsData.material24 = req.body.material24;
             lotsData.lot_qty = req.body.lot_qty;
             await lotsData.save();
             res.status(200).send({msg: 'done', data: lotsData});
