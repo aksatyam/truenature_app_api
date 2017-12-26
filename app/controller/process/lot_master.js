@@ -10,10 +10,10 @@ module.exports={
     saveLot: async(req, res)=>{
         try{
             if(!req.body)
-            throw validation.errorFormat('empty_field', 'Data not present', 400);
+                throw validation.errorFormat('empty_field', 'Data not present', 400);
             let lots= await Lot.findOne({ $and:[{indu_id:req.body.indu_id},{lot_name:req.body.lot_name}]});
             if(lots)
-            throw validation.errorFormat('duplicate', 'Lots already Exist', 409);
+                throw validation.errorFormat('duplicate', 'Lots already Exist', 409);
             let lotsData=new Lot();
             lotsData.indu_id = req.body.indu_id;
             lotsData.lot_name = req.body.lot_name;
