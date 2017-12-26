@@ -94,7 +94,7 @@ module.exports={
     },
     getAllLots: async(req, res)=>{
         try{
-            let lots= Lot.find({indu_id:req.params.id});
+            let lots=await Lot.find({indu_id:req.params.id});
             if(!lots)
             throw validation.errorFormat('Not Found','No Data Available for Industry',404);
             res.status(200).send({msg:'All Industry Data',data:lots});
@@ -112,7 +112,7 @@ module.exports={
     },
     getOneLot: async(req, res)=>{
         try{
-            let lot= Lot.findOne({_id:req.params.id});
+            let lot=await Lot.findOne({_id:req.params.id});
             if(!lot)
             throw validation.errorFormat('Not Found','No Data Available for Industry',404);
             res.status(200).send({msg:'All Industry Data',data:lot});
